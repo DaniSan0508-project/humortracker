@@ -5,6 +5,7 @@ import { Detail } from "./screens/Detail";
 import { SetUserName } from "./screens/SetUserName";
 import { AppStackParamList } from "./navigation/types";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { theme } from "./shared/themes/Theme";
 
 
 
@@ -13,7 +14,11 @@ const Stack = createNativeStackNavigator<AppStackParamList>();
 export function AppRoutes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="home" screenOptions={{ headerShown: false }} screenLayout={({ children }) => <SafeAreaView>{children}</SafeAreaView>}>
+            <Stack.Navigator initialRouteName="home" screenOptions={{
+                headerShown: false, contentStyle: {
+                    backgroundColor: theme.colors.background
+                }
+            }} screenLayout={({ children }) => <SafeAreaView>{children}</SafeAreaView>}>
                 <Stack.Screen name="home" component={Home} />
                 <Stack.Group
                     screenOptions={{

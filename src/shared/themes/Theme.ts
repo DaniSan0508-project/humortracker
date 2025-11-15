@@ -11,9 +11,11 @@ export const theme = {
         backgroundHightlight: 'rgba(224,213,59,0.17)',
     },
     fonts: {
-        title: 24,
-        subtitle: 20,
-        body: 14
+        size: {
+            title: 24,
+            subtitle: 20,
+            body: 14
+        }
     },
     family: {
         regular: 'regular',

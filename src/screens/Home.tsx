@@ -1,11 +1,13 @@
 import { Button, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { HomeScreenNavigationProp } from "../navigation/types";
+import { Header } from "../shared/components/Header";
 
 export function Home() {
     const navigation = useNavigation<HomeScreenNavigationProp>();
     return (
         <>
+            <Header name={undefined} />
             <Text style={{ fontFamily: 'extraBold' }}>Home Screen</Text>
             <Button title="Go to Details" onPress={() => navigation.navigate('details', { rate: 5 })}></Button>
             <Button title="Set User Name" onPress={() => navigation.navigate('setUserName')}></Button>
